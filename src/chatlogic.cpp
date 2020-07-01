@@ -33,6 +33,7 @@ ChatLogic::~ChatLogic()
     ////
 
     /// ChatLogic has no ownership relation to the ChatBot instance.
+
     // delete chatbot instance
     //delete _chatBot;  // Bug
 
@@ -137,6 +138,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                         // create new element if ID does not yet exist
                         if (newNode == _nodes.end())
                         {
+                            // 
                             _nodes.emplace_back(std::make_unique<GraphNode>(id));
                             newNode = _nodes.end() - 1; // get iterator to last element
 
@@ -219,10 +221,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
             }
         }
     }
-
-    // add chatbot to graph root node
-    //_chatBot->SetRootNode(rootNode);
-    //rootNode->MoveChatbotHere(std::move(*_chatBot));
 
     ///////////////////////////////////////////////
     // Local ChatBot instance on the stack 
